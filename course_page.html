@@ -41,34 +41,88 @@
         </script>
 
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                // Filter dropdown functionality
-                const select = document.querySelector("#select");
-                const list = document.querySelector("#list");
-                const selectText = document.querySelector("#selectText");
-                const filters = document.querySelectorAll(".filters");  // All filter options
-            
-                // Toggle options list visibility when the filter dropdown is clicked
-                select.addEventListener("click", () => {
-                    list.classList.toggle("open");
-                });
-            
-                // Update the selected filter when a filter option is clicked
-                filters.forEach((filter) => {
-                    filter.addEventListener("click", () => {
-                        selectText.innerText = filter.innerText;
-                        // Hide the dropdown after selecting an option
-                        list.classList.remove("open");
-                    });
-                });
-            
-                // Close the dropdown if user clicks outside of the dropdown
-                document.addEventListener("click", (e) => {
-                    if (!select.contains(e.target) && !list.contains(e.target)) {
-                        list.classList.remove("open");
-                    }
-                });
-            });
+document.addEventListener("DOMContentLoaded", () => {
+    const addButton = document.querySelector(".floating-add-button"), 
+          addReview = document.querySelector(".popup-container"), 
+          closeButton = document.querySelector(".popup .close-btn"), 
+          submitBtn = document.querySelector(".submit-btn");
+
+    const reviewsContainer = document.querySelector("#reviews");
+
+    // Show the pop-up when the "+" button is clicked
+    addButton.addEventListener("click", () => {
+        addReview.style.display = "flex";
+    });
+
+    // Close the pop-up when the close button is clicked
+    closeButton.addEventListener("click", () => {
+        addReview.style.display = "none";
+    });
+
+    // Add review function
+    submitBtn.addEventListener("click", () => {
+        // Get user input values
+        const semesterInput = document.querySelector("#semester-input").value;
+        const professorInput = document.querySelector("#professor-input").value;
+        const reviewInput = document.querySelector("#review-input").value;
+        const ratingInput = document.querySelector("#rating-input").value;
+
+        console.log(semesterInput, professorInput, reviewInput, ratingInput);
+
+        // Check if inputs are filled
+        if (semesterInput && professorInput && reviewInput && ratingInput) {
+            // Create a new card with the inputted data
+            const newCard = document.createElement("div");
+            newCard.classList.add("card");
+
+            newCard.innerHTML = `
+                <div class="badge">${ratingInput}/5</div>
+                <p id="professor">${professorInput}</p>
+                <p id="semester">${semesterInput}</p>
+                ${generateStars(ratingInput)}
+                <p id="author">by Anonymous - ${new Date().toLocaleDateString()}</p>
+                <p id="review">${reviewInput}</p>
+            `;
+
+            // Append the new card to the reviews section
+            reviewsContainer.appendChild(newCard);
+
+            // Clear the input fields after submission
+            document.querySelector("#semester-input").value = "";
+            document.querySelector("#professor-input").value = "";
+            document.querySelector("#review-input").value = "";
+            document.querySelector("#rating-input").value = "";
+
+            // Close the pop-up after submission
+            addReview.style.display = "none";
+        } else {
+            alert("Please fill in all fields before submitting your review.");
+        }
+    });
+
+    // Helper function to generate star ratings based on the user's rating input
+    function generateStars(rating) {
+        const fullStar = '<span class="fa fa-star checked"></span>';
+        const halfStar = '<span class="fas fa-star-half-alt"></span>';
+        const emptyStar = '<span class="fa fa-star"></span>';
+        
+        let starsHTML = "";
+        let ratingValue = parseFloat(rating);
+        
+        // Add full stars
+        for (let i = 1; i <= 5; i++) {
+            if (ratingValue >= i) {
+                starsHTML += fullStar;
+            } else if (ratingValue > i - 1) {
+                starsHTML += halfStar;
+            } else {
+                starsHTML += emptyStar;
+            }
+        }
+        return starsHTML;
+    }
+});
+
             </script>
     
         

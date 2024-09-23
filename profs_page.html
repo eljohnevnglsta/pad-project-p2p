@@ -24,15 +24,9 @@
                 <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#" id="add-review-nav"><i class="fas fa-plus"></i> Add Review</a></li>
                 <li><a href="profile.html"><i class="fas fa-user-friends"></i> Profile </a></li>
-                <!-- <li>
-                    <div class="notification-bell" id="notificationBell">
-                        <i class="bell-icon">&#128276;</i> 
-                    </div>
-                </li> -->
-                </ul>
+            </ul>
         </nav>
     </header>
-
 
     <!-- Professor information -->
     <div class="professor">
@@ -108,20 +102,84 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <!-- <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 P2P WannaBe | All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </footer> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const addButton = document.querySelector(".floating-add-button"), 
+                  addReview = document.querySelector(".popup-container"), 
+                  closeBtn = document.querySelector(".close-btn"),
+                  submitBtn = document.querySelector(".submit-btn"),
+                  reviewsContainer = document.querySelector("#reviews");
+            
+            // Show the pop-up when the "+" button is clicked
+            addButton.addEventListener("click", () => {
+                addReview.style.display = "flex";
+            });
+        
+            // Close the pop-up when the close button is clicked
+            closeBtn.addEventListener("click", () => {
+                addReview.style.display = "none";
+            });
 
-    <script src="filter_popup.js"></script>
+            // Submit review
+            submitBtn.addEventListener("click", () => {
+                const semesterInput = document.querySelector("#semester-input").value;
+                const professorInput = document.querySelector("#professor-input").value;
+                const reviewInput = document.querySelector("#review-input").value;
+                const ratingInput = document.querySelector("#rating-input").value;
+
+                // Check if inputs are filled
+                if (semesterInput && professorInput && reviewInput && ratingInput) {
+                    // Create a new card with the inputted data
+                    const newCard = document.createElement("div");
+                    newCard.classList.add("card");
+
+                    newCard.innerHTML = `
+                        <div class="badge">${ratingInput}/5</div>
+                        <p id="course">${professorInput}</p>
+                        <p id="semester">${semesterInput}</p>
+                        ${generateStars(ratingInput)}
+                        <p id="author">by Anonymous - ${new Date().toLocaleDateString()}</p>
+                        <p id="review">${reviewInput}</p>
+                    `;
+
+                    // Append the new card to the reviews section
+                    reviewsContainer.appendChild(newCard);
+
+                    // Clear the input fields after submission
+                    document.querySelector("#semester-input").value = "";
+                    document.querySelector("#professor-input").value = "";
+                    document.querySelector("#review-input").value = "";
+                    document.querySelector("#rating-input").value = "";
+
+                    // Close the pop-up after submission
+                    addReview.style.display = "none";
+                } else {
+                    alert("Please fill in all fields before submitting your review.");
+                }
+            });
+
+            // Helper function to generate star ratings based on the user's rating input
+            function generateStars(rating) {
+                const fullStar = '<span class="fa fa-star checked"></span>';
+                const halfStar = '<span class="fas fa-star-half-alt"></span>';
+                const emptyStar = '<span class="fa fa-star"></span>';
+                
+                let starsHTML = "";
+                let ratingValue = parseFloat(rating);
+                
+                // Add full stars
+                for (let i = 1; i <= 5; i++) {
+                    if (ratingValue >= i) {
+                        starsHTML += fullStar;
+                    } else if (ratingValue > i - 1) {
+                        starsHTML += halfStar;
+                    } else {
+                        starsHTML += emptyStar;
+                    }
+                }
+                return starsHTML;
+            }
+        });
+    </script>
 </body>
 </html>
-
