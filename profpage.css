@@ -512,3 +512,35 @@ footer {
     color: white; /* White bell icon */
     transition: transform 0.3s ease, color 0.3s ease;
 }
+
+.popup .close-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .close-btn:hover {
+    background-color: #064789;
+}
+
+.popup .submit-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #427AA1;
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .submit-btn:hover {
+    background-color: #064789;
+}

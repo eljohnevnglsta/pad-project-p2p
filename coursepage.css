@@ -270,6 +270,22 @@ div {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup .close-btn:hover {
+    background-color: #064789;
+}
+
+.popup .submit-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
     background-color: #427AA1;
     color: #fff;
     font-family: "Helvetica Neue", sans-serif;
@@ -277,7 +293,8 @@ div {
     border-radius: 5px;
     cursor: pointer;
 }
-.popup .close-btn:hover {
+
+.popup .submit-btn:hover {
     background-color: #064789;
 }
 
@@ -490,4 +507,69 @@ footer {
 .cta-button:hover {
     background-color: #064789; /* Darker shade */
     transform: scale(1.05);
+}
+
+.container{
+    background: #427AA1;
+    width: 40%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.search-bar{
+    background: #ffff;
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    padding: 0;
+    border-radius: 15px; 
+}
+
+#select{
+    background: #064789;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    color: #fff; 
+    width: 300px; 
+    padding: 10px 15px;
+    border-radius: 15px; 
+    cursor: pointer;
+    position: relative;
+}
+#select ul{
+    position: absolute; 
+    top: 90%;
+    padding: 0; 
+    left: 0; 
+    list-style: none; 
+    background: #fff;
+    color:#064789; 
+    width: 100%;
+    border-radius: 15px; 
+    font-size: 15px; 
+    font-family: "Helvetica Neue", sans-serif;
+    max-height: 0; 
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#select ul li{
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px; 
+    font-family: "Helvetica Neue", sans-serif;
+}
+.search-bar input{
+    padding: 10px 25px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px; 
+    font-family: "Helvetica Neue", sans-serif;
+}
+#select ul.open{
+    max-height: 300px; 
 }

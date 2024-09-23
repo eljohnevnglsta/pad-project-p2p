@@ -40,7 +40,7 @@
             <div class="professor-info-container">
                 <h1 id="professor-name">Prof. Juan Dela Cruz</h1>
             </div>
-            <p id="professor-courses">Commonly mentioned: CMSC 12, CMSC 125, CMSC 142, NSTP 2</p>
+            <p id="professor-courses">Commonly mentioned: CMSC 12, CMSC 56</p>
             <p id="professor-rating">avg rating: 9.5/10</p>
         </div>
 
@@ -71,18 +71,18 @@
                 <input type="text" id="semester-input" placeholder="Semester" required>
                 <input type="text" id="professor-input" placeholder="Course" required>
                 <textarea id="review-input" placeholder="Review..." required></textarea>
-                <input type="number" id="rating-input" placeholder="Rating (1-10)" min="1" max="10" step="0.1" required> 
-                <button type="button" class="close-btn">Submit</button>
+                <input type="number" id="rating-input" placeholder="Rating (1-5)" min="1" max="5" step="0.1" required> 
+                <button type="button" class="close-btn">&times;</button> <!-- Close button -->
+                <button type="button" class="submit-btn">Submit</button>
             </div>
         </div>
     </form>
-    
    
     <!-- Review Section -->
     <div id="reviews" class="reviews">
         <!-- Sample Card Structure -->
         <div class="card">
-            <div class="badge">9/10</div>
+            <div class="badge">4.5/5</div>
             <p id="course">CMSC 12</p>
             <p id="semester">1st Semester</p>
             <span class="fa fa-star checked"></span>
@@ -90,12 +90,12 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fas fa-star-half-alt"></span>
-            <p id="author">by Name Name - mm/dd/yy</p>
+            <p id="author">by Jane Watson - 01/16/23</p>
             <p id="review">Professor Dela Cruz's lectures in this course are engaging and easy to follow. She explains complex topics in a way that makes them understandable, and her passion for the subject really shines through. Highly recommend taking her class!</p>
         </div>
 
         <div class="card">
-            <div class="badge">8/10</div>
+            <div class="badge">4/5</div>
             <p id="course">CMSC 56</p>
             <p id="semester">1st Semester</p>
             <span class="fa fa-star checked"></span>
@@ -103,7 +103,7 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fas fa-star-half-alt"></span>
-            <p id="author">by Name Name - mm/dd/yy</p>
+            <p id="author">by John Doe - 01/16/23</p>
             <p id="review">This course was tough, but I learned so much with Professor Dela Cruz's teaching in class. He pushes you to think critically and apply concepts in real-world scenarios. If you're willing to put in the effort, you'll get a lot out of his courses.</p>
         </div>
     </div>
