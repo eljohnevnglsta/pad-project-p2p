@@ -1,0 +1,493 @@
+/* Styling the general parts of the webpage */
+
+body {
+    background-color: #f5f5f7;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064789;
+    padding: 8px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-header:hover {
+    background-color: #0b578d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-header .logo {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+    padding: 0px;
+}
+
+.nav-header h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-header .logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.nav-header .logo h1 {
+    color: #EBF2FA;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-header .logo:hover img {
+    transform: rotate(360deg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #EBF2FA;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color:#fcfcfc;
+    transform: scale(1.1);
+}
+
+nav ul li:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #EBF2FA;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s;
+    width: 100%;
+}
+
+/* The actual page */
+
+form {
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    height: auto;
+    padding: 20px;
+}
+
+/* Course header styling*/
+.course {
+    box-sizing: border-box;
+    background-color: #427AA1;
+    padding: 50px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+#course-title {
+    color: #EBF2FA;
+    font-size: 85px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    margin-bottom: 0px; 
+    padding: 0; 
+}
+
+#course-subheading {
+    color: #EBF2FA;
+    font-size: 23px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    margin-bottom: 5px; 
+    padding: 0; 
+}
+
+#course-rating {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0; 
+}
+.course-title-container {
+    display: inline-flex;
+    align-items: center; 
+    padding-left: 0px;
+}
+
+/* Filter menu styling */
+.select-btn {
+    padding: 15px 60px; 
+    background: #EBF2FA; 
+    color: #444446;
+    border: 0; 
+    outline: none;
+    cursor: pointer; 
+    font-size: 23px; 
+    font-weight: bold;
+    border-radius: 45px; 
+    font-family: "Helvetica Neue", sans-serif;
+}
+.select-btn i{
+    font-size: 25px; 
+    transition: 0.3s;
+}
+.select-menu.active .select-btn i{
+    transform: rotate(-180deg); 
+}
+.select-menu .options{
+    display: none;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px; 
+    border-radius: 10px; 
+    background: #EBF2FA; 
+    box-shadow: 0 0 3px rgba(0,0,0,0,1); 
+}
+.select-menu.active .options{
+    display: block; 
+}
+.options .option{
+    display: flex;
+    height: 55px; 
+    cursor: pointer; 
+    padding: 0 16px; 
+    border-radius: 8px; 
+    align-items: center; 
+    background: #EBF2FA; 
+}
+.options .option:hover{
+    background: #b8ddff; 
+}
+.option i{
+    font-size: 25px; 
+    margin-right: 12px; 
+}
+.option .option-text{
+    font-size: 18px; 
+    color: #333; 
+    font-family: "Helvetica Neue", sans-serif;
+
+/* Add review button styling */
+}
+.floating-container{
+    z-index: 1000;
+    position: fixed; 
+    width: 100px;
+    height: 100px; 
+    bottom: 0; 
+    right: 0; 
+    margin: 35px 25px; 
+}
+.floating-container:hover{
+    height: 100px; 
+}
+.floating-container:hover .floating-button{
+    box-shadow: 0 10px 25px rgba(44,179,240,0.6); 
+    transform: rotate(-180deg); 
+    transition: all 0.3s; 
+}
+.floating-add-button{
+    position: absolute; 
+    background-color: #427AA1;
+    color: #EBF2FA;
+    font-size: 30px;
+    font-family: "Helvetica Neue", sans-serif;
+    text-align: center;
+    line-height: 40px; 
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    left: 0; 
+    right: 0;
+    box-shadow: 0 10px 25px rgba(44,179,240,0.6); 
+    cursor: pointer;   
+}
+
+/* Styling the Pop-up box for adding reviews */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(168, 213, 255, 0.3);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    display: none;
+}
+.popup {
+    width: 400px; 
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(168, 213, 255, 0.3);
+    text-align: center;
+}
+.popup .close-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #427AA1;
+    color: #fff;
+    font-family: "Helvetica Neue", sans-serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.popup .close-btn:hover {
+    background-color: #064789;
+}
+
+/* Add review form */
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+textarea {
+    height: 250px;
+    resize: none;
+}
+
+/* Reviews Container */
+.reviews {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px;
+    gap: 35px;
+}
+
+/* Cards */
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 500px;
+    max-height: 95px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: visible;
+    color: #064789;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    height: 30px;
+    width: 30px;
+    background-color: #064789;
+    color: #EBF2FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* Review Text Styling */
+#professor {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+}
+
+#semester {
+    font-weight: bold;
+    font-size: 20px; 
+    margin: 10px 0;
+}
+
+#author {
+    font-style: italic;
+    font-size: 20px;
+}
+
+#review {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Initially hide the author and review */
+#author, #review {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+}
+
+/* Show on Hover */
+.card:hover {
+    max-height: 1000px;
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px black;
+    background-color: #427AA1;
+    color: #FFFFFF;
+}
+
+.card:hover #author, .card:hover #review {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stars */
+.checked {
+    color: gold;
+}
+
+.star-rating i {
+    font-size: 20px;
+}
+
+.fa-star-half-alt {
+    color: gold;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    background-color: #064789;
+    color: #EBF2FA;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color:#427AA1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .icon-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-box {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    .feedback-container {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cta-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('https://example.com/background.jpg'); /* Replace with a visually appealing image */
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color:#427AA1; /* Attractive color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #064789; /* Darker shade */
+    transform: scale(1.05);
+}

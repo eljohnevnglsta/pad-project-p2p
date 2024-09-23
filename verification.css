@@ -1,0 +1,87 @@
+body {
+    font-family: Helvetica;
+    background-color: #EBF2FA;
+    margin: 0;
+}
+
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064789;
+    padding: 4px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-header:hover {
+    background-color: #0b578d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-header .logo {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.nav-header .logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.nav-header .logo h1 {
+    color: #EBF2FA;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.sign-out {
+    font-weight: bold;
+    display: flex;
+    gap: 15px;
+    margin: 0 20px 0;
+}
+
+.sign-out a {
+    color: #EBF2FA;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sign-out a:hover {
+    text-decoration: underline;
+}
+
+.verification-box {
+    width: 40%;
+    padding: 40px; /* Increased padding for a taller box */
+    background-color: #427AA1;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto; /* Center the box */
+    box-sizing: border-box;
+    text-align: center; /* Center the text */
+    color: #EBF2FA;
+    height: 400px; /* Fixed height for the box */
+    justify-content: flex-start;
+}
+
+
+.verification-box h2 {
+    margin: 20px 0 10px; /* Added top margin to lower the heading */
+    font-size: 2.5rem; /* Increased font size for the heading */
+}
+
+.verification-box p {
+    margin: 0;
+    font-size: 2.2rem; /* Increased font size for the paragraph */
+    line-height: 1.5; /* Added line spacing */
+}

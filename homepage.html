@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P WannaBe</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header class="nav-header">
+        <div class="logo">
+            <img src="https://i.ibb.co/QQbhqCw/Your-paragraph-text.png" alt="P2P WannaBe Logo">
+            <h1>P2P WannaBe</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="searchpage.html"><i class="fas fa-search"></i> Search</a></li>
+                <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> Add Review</a></li>
+                <li><a href="profile.html"><i class="fas fa-user-friends"></i> Profile </a></li>
+                <li>
+                    <div class="notification-bell" id="notificationBell">
+                        <i class="bell-icon">&#128276;</i> <!-- Bell Icon -->
+                    </div>
+                </li>
+                </ul>
+        </nav>
+    </header>
+
+
+    <!-- Notification Tab (Hidden initially) -->
+    <div class="notification-tab" id="notificationTab">
+        <div class="notification-header">
+            <h3>Notifications</h3>
+            <span class="close-tab" id="closeTab">&times;</span> <!-- Close Button -->
+        </div>
+        <div class="notification-content">
+            <!-- Notification Item -->
+            <div class="notification-item">
+                <img src="https://cdn-icons-png.freepik.com/512/147/147133.png" alt="User Image" class="user-img">
+                <div class="notification-text">
+                    <p><strong>John Doe</strong> commented on your post.</p>
+                    <p class="time">2 hours ago</p>
+                    <a href="#" class="view-post-btn">View Post</a>
+                </div>
+                <i class="notification-icon">&#128172;</i> <!-- Comment Icon -->
+            </div>
+            <!-- Another Notification Item -->
+            <div class="notification-item">
+                <img src="https://international.uplb.edu.ph/wp-content/uploads/2022/02/M40A9936-min-scaled.jpg" alt="User Image" class="user-img">
+                <div class="notification-text">
+                    <p><strong>Jane Smith</strong> shared your post.</p>
+                    <p class="time">5 hours ago</p>
+                    <a href="#" class="view-post-btn">View Post</a>
+                </div>
+                <i class="notification-icon">&#128257;</i> <!-- Share Icon -->
+            </div>
+            <!-- More Notification Items -->
+            <div class="notification-item">
+                <img src="https://cdn-icons-png.freepik.com/512/147/147133.png" alt="User Image" class="user-img">
+                <div class="notification-text">
+                    <p><strong>Michael Lee</strong> liked your post.</p>
+                    <p class="time">1 day ago</p>
+                    <a href="#" class="view-post-btn">View Post</a>
+                </div>
+                <i class="notification-icon">&#128077;</i> <!-- Like Icon -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Cover Section -->
+    <section class="cover-section">
+        <div class="cover-overlay">
+            <div class="welcome-text">
+                <h2>Welcome to P2P WannaBe</h2>
+                <p class="intro-text">Unlock insights, ignite ideas, and excel together!</p>
+                <a href="#" class="cta-button">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <p>P2P WannaBe connects UPLB students with reliable course and professor reviews tailored to their academic needs.</p>
+                <div class="about-image-container">
+                    <img src="https://uplb.edu.ph/wp-content/uploads/2021/12/UPLB-gains-20-new-HEI-partners-for-2021-II.jpg" alt="About Image" class="about-image">
+                </div>
+                <p>Our platform is designed to streamline course and professor reviews, enabling students to make informed decisions efficiently.</p>
+                <p>With organized data and a user-friendly interface, we empower UPLB students to navigate course enlistment effortlessly.</p>
+                            </div>
+            <div class="about-icons">
+                <div class="icon-box">
+                    <i class="fas fa-user-graduate"></i> <!-- Updated to a student-focused icon -->
+                    <h3>Empower Students</h3>
+                    <p>Help UPLB students make informed decisions with reliable reviews.</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-eye"></i> <!-- Updated to an icon representing transparency -->
+                    <h3>Foster Transparency</h3>
+                    <p>Create an open space for honest academic feedback.</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-lock"></i> <!-- Updated to a lock icon for security -->
+                    <h3>Ensure Security</h3>
+                    <p>Protect student data with top-notch security.</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-laptop-code"></i> <!-- Updated to represent UX and technology -->
+                    <h3>Enhanced UX</h3>
+                    <p>Offer a smooth, easy-to-use interface for all.</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-users"></i> <!-- Updated to represent a community -->
+                    <h3>Community Engagement</h3>
+                    <p>Encourage students to share reviews and insights.</p>
+                </div>
+                <div class="icon-box">
+                    <i class="fas fa-tools"></i>
+                    <h3>Academic Tool</h3>
+                    <p>Utilize a range of tools designed for academic success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback Section -->
+    <section class="feedback-section">
+        <h2>User Posts</h2>
+        <div class="feedback-container">
+            <div class="feedback-post">
+                <div class="feedback-avatar">
+                    <img src="https://cdn-icons-png.freepik.com/512/147/147133.png" alt="User Avatar">
+                </div>
+                <div class="feedback-content">
+                    <h3>John Doe</h3>
+                    <p>Love the user-friendly design and functionality! The team did an excellent job!</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <img src="https://international.uplb.edu.ph/wp-content/uploads/2022/02/M40A9936-min-scaled.jpg" alt="Gallery Image" class="feedback-image">
+                    <div class="feedback-actions">
+                        <i class="fas fa-heart"></i> 32
+                        <i class="fas fa-comment"></i> 8
+                        <i class="fas fa-share"></i> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-post">
+                <div class="feedback-avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/147/147129.png" alt="User Avatar">
+                </div>
+                <div class="feedback-content">
+                    <h3>Jane Smith</h3>
+                    <p>Impressive website with fantastic features. Highly recommended!</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <img src="https://getaway.ph/storage/2020/06/20200307_161737-01.jpeg" alt="Gallery Image" class="feedback-image">
+                    <div class="feedback-actions">
+                        <i class="fas fa-heart"></i> 50
+                        <i class="fas fa-comment"></i> 15
+                        <i class="fas fa-share"></i> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-post">
+                <div class="feedback-avatar">
+                    <img src="https://cdn-icons-png.freepik.com/512/147/147133.png" alt="User Avatar">
+                </div>
+                <div class="feedback-content">
+                    <h3>Mark Johnson</h3>
+                    <p>This platform has transformed the way I connect with others. A true game-changer!</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/UPLB_Academic_Heritage_Monument%2C_June_2023.jpg" alt="Gallery Image" class="feedback-image">
+                    <div class="feedback-actions">
+                        <i class="fas fa-heart"></i> 45
+                        <i class="fas fa-comment"></i> 10
+                        <i class="fas fa-share"></i> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="feedback-post">
+                <div class="feedback-avatar">
+                    <img src="https://cdn-icons-png.flaticon.com/512/147/147129.png" alt="User Avatar">
+                </div>
+                <div class="feedback-content">
+                    <h3>Emily Davis</h3>
+                    <p>A wonderful experience! The services offered are truly exceptional!</p>
+                    <div class="star-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <img src="https://international.uplb.edu.ph/wp-content/uploads/2022/04/DSC_1153-scaled.jpg" alt="Gallery Image" class="feedback-image">
+                    <div class="feedback-actions">
+                        <i class="fas fa-heart"></i> 60
+                        <i class="fas fa-comment"></i> 20
+                        <i class="fas fa-share"></i> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ending Section -->
+    <section class="ending-section" style="background-color: #ffffff; padding: 50px; text-align: center;">
+        <h2 class="section-title">Join Us on Our Journey!</h2>
+        <p class="section-description">Together, we can unlock creativity and innovation. Let's build a future filled with possibilities!</p>
+        
+        <div class="mission-vision">
+            <div class="mission-card">
+                <h3>Our Mission</h3>
+                <p>To create a streamlined platform where UPLB students can access reliable course and professor reviews to enhance their learning experience.</p>
+            </div>
+            <div class="vision-card">
+                <h3>Our Vision</h3>
+                <p>To be the go-to hub for UPLB students, offering organized and secure academic insights, ensuring a smoother and more informed course enlistment process.</p>
+            </div>
+        </div>
+        
+        <a href="#" class="cta-button">Get Involved</a>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 P2P WannaBe | All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="notifcationbell.js" defer></script>
+</body>
+
+</html>

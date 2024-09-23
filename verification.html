@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="verification.css">
+    <title>Verification Notice</title>
+    <script>
+
+        function signOut()                                      // Redirect to auth.html when the sign-out link is clicked
+        {
+            window.location.href = 'auth.html';                 // Redirecting to auth.html
+        }
+
+    </script>
+</head>
+<body>
+    <header class="nav-header">
+        <div class="logo">
+            <img src = "https://miro.medium.com/v2/resize:fit:1400/1*9nBEkSAvaAXPQiOLQ6h2pA.png" alt="P2P WannaBe Logo">
+            <h1>P2P WannaBe</h1>
+        </div>
+        <div class="sign-out">
+            <a href="javascript:void(0);" onclick="signOut()">Sign Out</a>
+        </div>
+    </header>
+    
+    <div class="verification-box">
+        <h2>Notice</h2>
+        <p>Verification in progress. We<br>
+        will contact you via email<br>
+        once your account is <br>
+        ready.</p>
+    </div>
+</body>
+</html>

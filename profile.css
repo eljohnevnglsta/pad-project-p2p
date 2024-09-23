@@ -1,0 +1,468 @@
+/* For the layout of name */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f7;
+    font-family: "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #064789;
+    padding: 8px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-header:hover {
+    background-color: #0b578d;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-header .logo {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s;
+    padding: 0px;
+}
+
+.nav-header h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-header .logo img {
+    height: 60px;
+    margin-right: 15px;
+}
+
+.nav-header .logo h1 {
+    color: #EBF2FA;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    transition: color 0.3s;
+}
+
+.nav-header .logo:hover img {
+    transform: rotate(360deg);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: #EBF2FA;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+    font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+    color:#fcfcfc;
+    transform: scale(1.1);
+}
+
+nav ul li:hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #EBF2FA;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s;
+    width: 100%;
+}
+
+/* subheading */
+
+.name {
+    height: 350px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #427AA1;
+    padding: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.name h1 {
+    color: #EBF2FA;
+    font-size: 85px;
+    font-weight: bold;
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    margin-bottom: 0px; 
+    margin-left: 30px;
+    padding: 0; 
+}
+
+.name p {
+    line-height: 1.2;
+    margin-top: 0%;
+    margin-left: 30px;
+    color: #EBF2FA;
+    font-size: 23px;
+    font-family: "Helvetica Neue", sans-serif;
+    margin-bottom: 5px; 
+    padding: 0; 
+}   
+
+.social-icons {
+    position: absolute;
+    margin-top: 200px;
+    left: 3%;
+}
+.social-icons a {
+    color: #EBF2FA;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color:#01042e;
+}
+
+/* Ratings */
+
+.star-rating {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.star-rating i {
+    color: gold;
+}
+
+.checked {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: gold;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    position: absolute;
+    left: 35px;
+    margin-left: 235px;
+}
+
+.info {
+    position: absolute;
+    margin-left: 250px;
+}
+
+.profile-image{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 3%;
+    overflow: hidden;
+}
+.profile-image img{
+    border-radius: 100%;
+    border: #01042e;
+}
+
+.edit-icon {
+    color: #EBF2FA; 
+    text-decoration: none;
+    font-size: 65px; 
+    transition: color 0.3s;
+    position: absolute;
+    margin-left: 100%;
+    margin-right: 2%;
+    margin-top: 8%;
+    margin-bottom: 11%;
+}
+
+.edit-icon:hover {
+    color: #1d27a9; 
+}
+
+.h1 .edit-post {
+    color:#1d27a9;
+    position: absolute;
+    margin-left: 100;
+    margin-top: 8%;
+    margin-left: 100px; 
+}
+
+.edit:hover {
+    color: #007BFF;
+}
+
+/* Reviews Container */
+.review-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 30px;
+    padding-bottom: 20px;
+}
+
+/* Cards */
+.card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 500px;
+    max-height: 135px;
+    border-radius: 25px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    overflow: visible;
+    color: #064789;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    height: 75px;
+    width: 75px;
+    background-color: #064789;
+    color: #EBF2FA;
+    border-radius: 50%;
+}
+
+/* Review Text Styling */
+#course {
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0;
+}
+
+#professor {
+    font-weight: bold;
+    font-size: 20px; 
+    margin: 10px 0;
+}
+
+#semester {
+    font-style: italic;
+    font-size: 20px;
+    padding: 10px 0 ;
+}
+
+#review {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Initially hide */
+#semester, #review {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.3s ease;
+    transform: translateY(-20px);
+}
+
+/* Show on Hover */
+.card:hover {
+    max-height: 1000px;
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px black;
+    background-color: #427AA1;
+    color: #FFFFFF;
+}
+
+.card:hover #review, .card:hover #semester {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stars */
+.checked {
+    color: gold;
+}
+
+.star-rating i {
+    font-size: 20px;
+}
+
+.fa-star-half-alt {
+    color: gold;
+}
+
+/* Edit Icon */
+.edit-post {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.edit-icon {
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.edit-icon:hover {
+    color: #000;
+}
+
+.edit-post {
+    position: absolute;
+    top: 21px;
+    right: 21px;
+    font-size: 25px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.edit-post:hover {
+    color: #FFFFFF;
+}
+
+/* Footer */
+footer {
+    position: fixed;
+    width: 100%;
+    background-color: #064789;
+    color: #EBF2FA;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    bottom: 0; /* Makes it stick to the bottom */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+    padding: 0px;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #427AA1;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .icon-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon-box {
+        margin-bottom: 20px;
+        width: 90%;
+    }
+
+    .feedback-container {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.cta-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-image: url('https://example.com/background.jpg'); /* Replace with a visually appealing image */
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    padding: 15px 30px;
+    background-color:#427AA1; /* Attractive color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #064789; /* Darker shade */
+    transform: scale(1.05);
+}
