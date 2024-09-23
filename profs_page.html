@@ -38,6 +38,7 @@
             <p id="professor-rating">avg rating: 9.5/10</p>
         </div>
 
+        <!-- Search by course -->
         <div class="container">
             <div class="search-bar">
                 <div id="select">
@@ -48,7 +49,7 @@
                         <li class="filters">Semester</li>
                     </ul>
                 </div>
-                <input type="text" id="inputfield" placeholder="Search in Courses">
+                <input type="text" id="course-search-input" placeholder="Search by course name" oninput="filterReviewsByCourse()">
             </div>
         </div>
 
@@ -180,6 +181,28 @@
                 return starsHTML;
             }
         });
+
+        // Function to filter reviews by course name
+        function filterReviewsByCourse() {
+            // Get the search query
+            const query = document.getElementById('course-search-input').value.toLowerCase();
+
+            // Get all cards
+            const cards = document.querySelectorAll('#reviews .card');
+
+            // Loop through each card
+            cards.forEach(card => {
+                // Get the course name
+                const course = card.querySelector('#course').textContent.toLowerCase();
+
+                // Check if the course name matches the query
+                if (course.includes(query)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
     </script>
 </body>
 </html>

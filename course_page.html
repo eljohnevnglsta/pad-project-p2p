@@ -1,132 +1,17 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title> P2P WannaBe </title>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P2P WannaBe</title>
     
-    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet"> <!--For embedding the font "Helvetica Neue" into the webpage-->
-    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet"> <!--For Boxicons CSS-->
-    <link rel="stylesheet" type="text/css" href="coursepage.css"/> <!--Linking external stylesheet (CSS) for consistency-->
+    <!-- Fonts, icons, and stylesheets -->
+    <link href="https://fonts.cdnfonts.com/css/helvetica-neue-5" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="coursepage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="profpage.css"/> -->
-
-    <script>
-        // For Add review pop-up
-        document.addEventListener("DOMContentLoaded", () => {
-            const addButton = document.querySelector(".floating-add-button"), 
-                  addReview = document.querySelector(".popup-container"), 
-                  submit = document.querySelector(".popup .close-btn");
-        
-            // Show the pop-up when the "+" button is clicked
-            addButton.addEventListener("click", () => {
-                addReview.style.display = "flex";
-            });
-        
-            // Close the pop-up when the submit button is clicked
-            submit.addEventListener("click", () => {
-                addReview.style.display = "none";
-            });
-        
-            // Select the 'Add Review' option from the navbar
-            const addReviewNav = document.querySelector("#add-review-nav");
-        
-            // When the 'Add Review' in the navbar is clicked, show the pop-up
-            addReviewNav.addEventListener("click", () => {
-                addReview.style.display = "flex";
-            });
-        });
-        </script>
-
-        <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const addButton = document.querySelector(".floating-add-button"), 
-          addReview = document.querySelector(".popup-container"), 
-          closeButton = document.querySelector(".popup .close-btn"), 
-          submitBtn = document.querySelector(".submit-btn");
-
-    const reviewsContainer = document.querySelector("#reviews");
-
-    // Show the pop-up when the "+" button is clicked
-    addButton.addEventListener("click", () => {
-        addReview.style.display = "flex";
-    });
-
-    // Close the pop-up when the close button is clicked
-    closeButton.addEventListener("click", () => {
-        addReview.style.display = "none";
-    });
-
-    // Add review function
-    submitBtn.addEventListener("click", () => {
-        // Get user input values
-        const semesterInput = document.querySelector("#semester-input").value;
-        const professorInput = document.querySelector("#professor-input").value;
-        const reviewInput = document.querySelector("#review-input").value;
-        const ratingInput = document.querySelector("#rating-input").value;
-
-        console.log(semesterInput, professorInput, reviewInput, ratingInput);
-
-        // Check if inputs are filled
-        if (semesterInput && professorInput && reviewInput && ratingInput) {
-            // Create a new card with the inputted data
-            const newCard = document.createElement("div");
-            newCard.classList.add("card");
-
-            newCard.innerHTML = `
-                <div class="badge">${ratingInput}/5</div>
-                <p id="professor">${professorInput}</p>
-                <p id="semester">${semesterInput}</p>
-                ${generateStars(ratingInput)}
-                <p id="author">by Anonymous - ${new Date().toLocaleDateString()}</p>
-                <p id="review">${reviewInput}</p>
-            `;
-
-            // Append the new card to the reviews section
-            reviewsContainer.appendChild(newCard);
-
-            // Clear the input fields after submission
-            document.querySelector("#semester-input").value = "";
-            document.querySelector("#professor-input").value = "";
-            document.querySelector("#review-input").value = "";
-            document.querySelector("#rating-input").value = "";
-
-            // Close the pop-up after submission
-            addReview.style.display = "none";
-        } else {
-            alert("Please fill in all fields before submitting your review.");
-        }
-    });
-
-    // Helper function to generate star ratings based on the user's rating input
-    function generateStars(rating) {
-        const fullStar = '<span class="fa fa-star checked"></span>';
-        const halfStar = '<span class="fas fa-star-half-alt"></span>';
-        const emptyStar = '<span class="fa fa-star"></span>';
-        
-        let starsHTML = "";
-        let ratingValue = parseFloat(rating);
-        
-        // Add full stars
-        for (let i = 1; i <= 5; i++) {
-            if (ratingValue >= i) {
-                starsHTML += fullStar;
-            } else if (ratingValue > i - 1) {
-                starsHTML += halfStar;
-            } else {
-                starsHTML += emptyStar;
-            }
-        }
-        return starsHTML;
-    }
-});
-
-            </script>
-    
-        
 </head>
+
 <body>
     <!-- Navigation Bar -->
     <header class="nav-header">
@@ -139,11 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <li><a href="searchpage.html"><i class="fas fa-search"></i> Search</a></li>
                 <li><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#" id="add-review-nav"><i class="fas fa-plus"></i> Add Review</a></li>
-                <li><a href="profile.html"><i class="fas fa-user-friends"></i> Profile </a></li>
+                <li><a href="profile.html"><i class="fas fa-user-friends"></i> Profile</a></li>
             </ul>
         </nav>
     </header>
-
 
     <!-- Course information -->
     <div class="course">
@@ -154,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <p id="course-subheading">Foundations of Computer Science</p>
             <p id="course-rating">avg rating: 4.5/5</p>
         </div>
+
         <!-- Filter selection menu -->
         <div class="container">
             <div class="search-bar">
@@ -165,21 +50,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li class="filters">Semester</li>
                     </ul>
                 </div>
-                <input type="text" id="inputfield" placeholder="Search in Professors">
+                <input type="text" id="inputfield" placeholder="Search in Professors" oninput="filterReviews()">
             </div>
         </div>     
+
         <!-- Add review button and popup -->
         <div class="floating-container">
             <div class="floating-add-button">+</div>
         </div>
     </div>
-    
+
+    <!-- Add review form -->
     <form>
         <div class="popup-container">
             <div class="popup">
                 <h2>Add review here.</h2>
                 <input type="text" id="semester-input" placeholder="Semester" required>
-                <input type="text" id="professor-input" placeholder="Course" required>
+                <input type="text" id="professor-input" placeholder="Professor" required>
                 <textarea id="review-input" placeholder="Review..." required></textarea>
                 <input type="number" id="rating-input" placeholder="Rating (1-5)" min="1" max="5" step="0.1" required> 
                 <button type="button" class="close-btn">&times;</button> <!-- Close button -->
@@ -187,11 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
         </div>
     </form>
-    
-    
+
     <!-- Review Section -->
     <div id="reviews" class="reviews">
-        <!-- Sample Card Structure -->
         <div class="card">
             <div class="badge">4/5</div>
             <p id="professor">Prof. Juan Dela Cruz</p>
@@ -201,39 +86,45 @@ document.addEventListener("DOMContentLoaded", () => {
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fas fa-star-half-alt"></span>
-            <p id="author">by Name Name - mm/dd/yy</p>
-            <p id="review">Professor Dela Cruz's lectures are engaging and easy to follow. She explains complex topics in a way that makes them understandable, and her passion for the subject really shines through. Highly recommend taking her class!</p>
+            <p id="author">by John Doe - mm/dd/yy</p>
+            <p id="review">Professor Dela Cruz's lectures are engaging and easy to follow. Highly recommend taking her class!</p>
         </div>
 
         <div class="card">
             <div class="badge">5/5</div>
-            <p id="professor">Prof. Juan Dela Cruz</p>
+            <p id="professor">Prof. Maria Mercedes</p>
             <p id="semester">1st Semester</p>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fas fa-star-half-alt"></span>
-            <p id="author">by Name Name - mm/dd/yy</p>
-            <p id="review">Professor Dela Cruz's class was tough, but I learned so much. He pushes you to think critically and apply concepts in real-world scenarios. If you're willing to put in the effort, you'll get a lot out of his courses.</p>
+            <p id="author">by Steve Jobs - mm/dd/yy</p>
+            <p id="review">Professor Dela Cruz's class was tough, but I learned so much. He pushes you to think critically!</p>
         </div>
     </div>
 
-    <!-- Footer -->
-    <!-- <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 P2P WannaBe | All rights reserved.</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-    </footer> -->
+    <script>
+        // Filter reviews based on professor name input
+        function filterReviews() {
+            // Get the search query from input
+            const query = document.getElementById('inputfield').value.toLowerCase();
 
+            // Get all the review cards
+            const cards = document.querySelectorAll('#reviews .card');
+
+            // Loop through all cards and show/hide based on professor name
+            cards.forEach(card => {
+                const professor = card.querySelector('#professor').textContent.toLowerCase();
+                if (professor.includes(query)) {
+                    card.style.display = 'block'; // Show matching card
+                } else {
+                    card.style.display = 'none'; // Hide non-matching card
+                }
+            });
+        }
+    </script>
+    
     <script src="filter_popup.js"></script>
-
 </body>
 </html>
-
