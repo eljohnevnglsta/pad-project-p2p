@@ -573,3 +573,26 @@ footer {
 #select ul.open{
     max-height: 300px; 
 }
+.rating-report {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.report-btn {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    max-width: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.report-btn:hover {
+    background-color: darkred;
+}
+

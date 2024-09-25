@@ -804,3 +804,23 @@ html {
     transform: translateY(-3px); /* Button lifts slightly */
   }
   
+
+.notification-footer {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.report-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.report-btn:hover {
+    background-color: #d32f2f;
+}
