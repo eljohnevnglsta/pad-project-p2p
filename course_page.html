@@ -105,7 +105,85 @@
     </div>
 
     <script>
-        // Filter reviews based on professor name input
+         document.addEventListener("DOMContentLoaded", () => {
+            const addButton = document.querySelector(".floating-add-button"), 
+                  addReview = document.querySelector(".popup-container"), 
+                  closeBtn = document.querySelector(".close-btn"),
+                  submitBtn = document.querySelector(".submit-btn"),
+                  reviewsContainer = document.querySelector("#reviews");
+            
+            // Show the pop-up when the "+" button is clicked
+            addButton.addEventListener("click", () => {
+                addReview.style.display = "flex";
+            });
+        
+            // Close the pop-up when the close button is clicked
+            closeBtn.addEventListener("click", () => {
+                addReview.style.display = "none";
+            });
+
+            // Submit review
+            submitBtn.addEventListener("click", () => {
+                const semesterInput = document.querySelector("#semester-input").value;
+                const professorInput = document.querySelector("#professor-input").value;
+                const reviewInput = document.querySelector("#review-input").value;
+                const ratingInput = document.querySelector("#rating-input").value;
+
+                // Check if inputs are filled
+                if (semesterInput && professorInput && reviewInput && ratingInput) {
+                    // Create a new card with the inputted data
+                    const newCard = document.createElement("div");
+                    newCard.classList.add("card");
+
+                    newCard.innerHTML = `
+                        <div class="badge">${ratingInput}/5</div>
+                        <p id="professor">${professorInput}</p>
+                        <p id="semester">${semesterInput}</p>
+                        ${generateStars(ratingInput)}
+                        <p id="author">by John Doe - ${new Date().toLocaleDateString()}</p>
+                        <p id="review">${reviewInput}</p>
+                    `;
+
+                    // Append the new card to the reviews section
+                    reviewsContainer.appendChild(newCard);
+
+                    // Clear the input fields after submission
+                    document.querySelector("#semester-input").value = "";
+                    document.querySelector("#professor-input").value = "";
+                    document.querySelector("#review-input").value = "";
+                    document.querySelector("#rating-input").value = "";
+
+                    // Close the pop-up after submission
+                    addReview.style.display = "none";
+                } else {
+                    alert("Please fill in all fields before submitting your review.");
+                }
+            });
+
+            // Helper function to generate star ratings based on the user's rating input
+            function generateStars(rating) {
+                const fullStar = '<span class="fa fa-star checked"></span>';
+                const halfStar = '<span class="fas fa-star-half-alt"></span>';
+                const emptyStar = '<span class="fa fa-star"></span>';
+                
+                let starsHTML = "";
+                let ratingValue = parseFloat(rating);
+                
+                // Add full stars
+                for (let i = 1; i <= 5; i++) {
+                    if (ratingValue >= i) {
+                        starsHTML += fullStar;
+                    } else if (ratingValue > i - 1) {
+                        starsHTML += halfStar;
+                    } else {
+                        starsHTML += emptyStar;
+                    }
+                }
+                return starsHTML;
+            }
+        });
+
+        // Filter reviews based on professor name or semester input
         function filterReviews() {
             // Get the search query from input
             const query = document.getElementById('inputfield').value.toLowerCase();
@@ -113,10 +191,12 @@
             // Get all the review cards
             const cards = document.querySelectorAll('#reviews .card');
 
-            // Loop through all cards and show/hide based on professor name
+            // Loop through all cards and show/hide based on professor name or semester
             cards.forEach(card => {
                 const professor = card.querySelector('#professor').textContent.toLowerCase();
-                if (professor.includes(query)) {
+                const semester = card.querySelector('#semester').textContent.toLowerCase();
+                
+                if (professor.includes(query) || semester.includes(query)) {
                     card.style.display = 'block'; // Show matching card
                 } else {
                     card.style.display = 'none'; // Hide non-matching card

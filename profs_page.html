@@ -42,12 +42,7 @@
         <div class="container">
             <div class="search-bar">
                 <div id="select">
-                    <p id="selectText">Filter by</p>
-                    <i class="bx bx-chevron-down"></i>
-                    <ul id="list">
-                        <li class="filters">Courses</li>
-                        <li class="filters">Semester</li>
-                    </ul>
+                    <p id="selectText">Filter by Courses</p>
                 </div>
                 <input type="text" id="course-search-input" placeholder="Search by course name" oninput="filterReviewsByCourse()">
             </div>
@@ -64,7 +59,7 @@
             <div class="popup">
                 <h2>Add review here.</h2>
                 <input type="text" id="semester-input" placeholder="Semester" required>
-                <input type="text" id="professor-input" placeholder="Course" required>
+                <input type="text" id="course-input" placeholder="Course" required>
                 <textarea id="review-input" placeholder="Review..." required></textarea>
                 <input type="number" id="rating-input" placeholder="Rating (1-5)" min="1" max="5" step="0.1" required> 
                 <button type="button" class="close-btn">&times;</button> <!-- Close button -->
@@ -124,22 +119,22 @@
             // Submit review
             submitBtn.addEventListener("click", () => {
                 const semesterInput = document.querySelector("#semester-input").value;
-                const professorInput = document.querySelector("#professor-input").value;
+                const courseInput = document.querySelector("#course-input").value;
                 const reviewInput = document.querySelector("#review-input").value;
                 const ratingInput = document.querySelector("#rating-input").value;
 
                 // Check if inputs are filled
-                if (semesterInput && professorInput && reviewInput && ratingInput) {
+                if (semesterInput && courseInput && reviewInput && ratingInput) {
                     // Create a new card with the inputted data
                     const newCard = document.createElement("div");
                     newCard.classList.add("card");
 
                     newCard.innerHTML = `
                         <div class="badge">${ratingInput}/5</div>
-                        <p id="course">${professorInput}</p>
+                        <p id="course">${courseInput}</p>
                         <p id="semester">${semesterInput}</p>
                         ${generateStars(ratingInput)}
-                        <p id="author">by Anonymous - ${new Date().toLocaleDateString()}</p>
+                        <p id="author">by John Doe - ${new Date().toLocaleDateString()}</p>
                         <p id="review">${reviewInput}</p>
                     `;
 
@@ -148,7 +143,7 @@
 
                     // Clear the input fields after submission
                     document.querySelector("#semester-input").value = "";
-                    document.querySelector("#professor-input").value = "";
+                    document.querySelector("#course-input").value = "";
                     document.querySelector("#review-input").value = "";
                     document.querySelector("#rating-input").value = "";
 
